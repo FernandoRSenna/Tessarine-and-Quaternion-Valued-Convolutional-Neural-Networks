@@ -6,6 +6,12 @@ from HyperImaginary4DInitializer import HyperImaginary4DInitializer
 
 
 class TessConv2D(layers.Layer):
+    """
+    Tessarine valued 2D convolution layer.
+    References:
+    [1] Trabelsi, C., Bilaniuk, O., Serdyuk, D., Subramanian, S., Santos, J. F., Mehri, S., Rostamzadeh, N., Bengio, Y., and Pal, C. J. (2017). Deep complex networks.
+    [2] Gaudet, C. and Maida, A. (2017). Deep quaternion networks.
+    """
     def __init__(self,
                  filters,
                  kernel_size,

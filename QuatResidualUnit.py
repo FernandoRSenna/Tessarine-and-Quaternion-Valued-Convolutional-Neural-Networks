@@ -9,6 +9,12 @@ DefaultConvQuat = partial(QuatConv2D, kernel_size=(3, 3), strides=1, padding="SA
 
 
 class QuatResidualUnit(layers.Layer):
+    """
+    Quaternion valued residual unit.
+    References:
+    [1] He, K., Zhang, X., Ren, S., and Sun, J. (2015).  Deep residual learning for image recog-nition.
+    [2] He, K., Zhang, X., Ren, S., and Sun, J. (2016).  Identity mappings in deep residual net-works.
+    """
     def __init__(self, filters, strides=1, activation="elu", activation_position="after", **kwargs):
         super().__init__(**kwargs)
         self.activation = kr.activations.get(activation)

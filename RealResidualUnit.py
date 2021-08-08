@@ -12,6 +12,12 @@ DefaultConv2D = partial(keras.layers.Conv2D,
 
 
 class ResidualUnit(keras.layers.Layer):
+    """
+    Real residual unit.
+    References:
+    [1] He, K., Zhang, X., Ren, S., and Sun, J. (2015).  Deep residual learning for image recog-nition.
+    [2] He, K., Zhang, X., Ren, S., and Sun, J. (2016).  Identity mappings in deep residual net-works.
+    """
     def __init__(self, filters, strides=1, conv_first=True, activation="elu", include_bn=True, **kwargs):
         super().__init__(**kwargs)
         self.activation = keras.activations.get(activation)

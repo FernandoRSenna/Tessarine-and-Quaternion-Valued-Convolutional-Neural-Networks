@@ -33,6 +33,15 @@ def _compute_fans(shape):
 
 
 class HyperImaginary4DInitializer(initializers.Initializer):
+    """
+    Computes initialization based on quaternion variance.
+    Options: he uniform, he normal, glorot uniform, glorot normal.
+    References:
+    [1] He, K., Zhang, X., Ren, S., and Sun, J. (2015b).  Delving deep into rectifiers: Surpassing human-level performance on imagenet classification.
+    [2] Glorot, X. and Bengio, Y. (2010).  Understanding the difficulty of training deep feedforward neural networks.
+    In Teh, Y. W. and Titterington, M., editors, Proceedings of the Thirteenth International Conference on Artificial Intelligence and Statistics,
+    volume 9 of Proceedings of Machine Learning Research, pages 249–256, Chia Laguna Resort, Sardinia, Italy. PMLR.
+    """
     def __init__(self, criterion='he', distribution='uniform', seed=31337):
         self.criterion = criterion
         self.distribution = distribution

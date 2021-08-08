@@ -2,10 +2,22 @@ import tensorflow as tf
 import tensorflow.keras as kr
 from tensorflow.keras import layers, activations, initializers, regularizers
 
+
 def diag_init(shape, dtype=None):
     return tf.ones(shape) / 2.
 
+
 class HyperImaginary4DBNActivation(layers.Layer):
+    """
+    Batch Normalization for tessarines and quaternions.
+    Based on matrix whitening. Decorrelates each component of tessarine/quaternion.
+    Includes activation: can be placed before, after or in the middle of BN.
+    References:
+    [1] Ioffe, S. and Szegedy, C. (2015). Batch normalization: Accelerating deep network training by reducing internal covariate shift.
+    [2] Kessy, A., Lewin, A., and Strimmer, K. (2018). Optimal whitening and decorrelation. The American Statistician, 72(4):309–314.
+    [3] Trabelsi, C., Bilaniuk, O., Serdyuk, D., Subramanian, S., Santos, J. F., Mehri, S., Ros-tamzadeh, N., Bengio, Y., and Pal, C. J. (2017). Deep complex networks.
+    [4] Gaudet, C. and Maida, A. (2017). Deep quaternion networks.
+    """
     def __init__(self,
                  center=True,
                  scale=True,

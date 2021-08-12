@@ -2,7 +2,7 @@ import tensorflow.keras as kr
 from tensorflow.keras import layers
 from functools import partial
 from TessConv2D import TessConv2D
-from HyperImaginary4DBNActivation import HyperImaginary4DBNActivation
+from Hypercomplex4DBNActivation import Hypercomplex4DBNActivation
 
 
 DefaultConvTess = partial(TessConv2D, kernel_size=(3, 3), strides=1, padding="SAME", kernel_regularizer=1e-3, use_bias=False)
@@ -20,14 +20,14 @@ class TessResidualUnit(layers.Layer):
         self.activation = kr.activations.get(activation)
         self.main_layers = [
             DefaultConvTess(filters, strides=strides),
-            HyperImaginary4DBNActivation(activation=activation, activation_position=activation_position),
+            Hypercomplex4DBNActivation(activation=activation, activation_position=activation_position),
             DefaultConvTess(filters),
-            HyperImaginary4DBNActivation(activation=activation, activation_position=activation_position)]
+            Hypercomplex4DBNActivation(activation=activation, activation_position=activation_position)]
         self.skip_layers = []
         if strides > 1:
             self.skip_layers = [
                 DefaultConvTess(filters, kernel_size=(1, 1), strides=strides),
-                HyperImaginary4DBNActivation(activation=None, activation_position='no_activation')]
+                Hypercomplex4DBNActivation(activation=None, activation_position='no_activation')]
 
     def call(self, inputs):
         Z = inputs

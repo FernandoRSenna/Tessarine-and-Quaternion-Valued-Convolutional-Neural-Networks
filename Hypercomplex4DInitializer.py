@@ -32,7 +32,7 @@ def _compute_fans(shape):
     return int(fan_in), int(fan_out)
 
 
-class HyperImaginary4DInitializer(initializers.Initializer):
+class Hypercomplex4DInitializer(initializers.Initializer):
     """
     Computes initialization based on quaternion variance.
     Options: he uniform, he normal, glorot uniform, glorot normal.

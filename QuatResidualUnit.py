@@ -1,7 +1,7 @@
 import tensorflow.keras as kr
 from tensorflow.keras import layers
 from functools import partial
-from HyperImaginary4DBNActivation import HyperImaginary4DBNActivation
+from Hypercomplex4DBNActivation import Hypercomplex4DBNActivation
 from QuatConv2D import QuatConv2D
 
 
@@ -20,14 +20,14 @@ class QuatResidualUnit(layers.Layer):
         self.activation = kr.activations.get(activation)
         self.main_layers = [
             DefaultConvQuat(filters, strides=strides),
-            HyperImaginary4DBNActivation(activation=activation, activation_position=activation_position),
+            Hypercomplex4DBNActivation(activation=activation, activation_position=activation_position),
             DefaultConvQuat(filters),
-            HyperImaginary4DBNActivation(activation=activation, activation_position=activation_position)]
+            Hypercomplex4DBNActivation(activation=activation, activation_position=activation_position)]
         self.skip_layers = []
         if strides > 1:
             self.skip_layers = [
                 DefaultConvQuat(filters, kernel_size=(1, 1), strides=strides),
-                HyperImaginary4DBNActivation(activation_position="no_activation")]
+                Hypercomplex4DBNActivation(activation_position="no_activation")]
 
     def call(self, inputs):
         Z = inputs

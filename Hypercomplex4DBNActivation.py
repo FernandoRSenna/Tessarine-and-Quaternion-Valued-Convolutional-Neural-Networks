@@ -7,7 +7,7 @@ def diag_init(shape, dtype=None):
     return tf.ones(shape) / 2.
 
 
-class HyperImaginary4DBNActivation(layers.Layer):
+class Hypercomplex4DBNActivation(layers.Layer):
     """
     Batch Normalization for tessarines and quaternions.
     Based on matrix whitening. Decorrelates each component of tessarine/quaternion.
@@ -35,7 +35,7 @@ class HyperImaginary4DBNActivation(layers.Layer):
                  activation_position="after",
                  epsilon=1e-6,
                  **kwargs):
-        super(HyperImaginary4DBNActivation, self).__init__(**kwargs)
+        super(Hypercomplex4DBNActivation, self).__init__(**kwargs)
         self.center = center
         self.scale = scale
         self.momentum = momentum

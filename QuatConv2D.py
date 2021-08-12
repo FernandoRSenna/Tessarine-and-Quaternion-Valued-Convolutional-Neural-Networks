@@ -2,7 +2,7 @@ import tensorflow as tf
 import tensorflow.keras as kr
 from tensorflow.keras import layers, activations
 from tensorflow.python.framework import tensor_shape
-from HyperImaginary4DInitializer import HyperImaginary4DInitializer
+from Hypercomplex4DInitializer import Hypercomplex4DInitializer
 
 
 class QuatConv2D(layers.Layer):
@@ -19,7 +19,7 @@ class QuatConv2D(layers.Layer):
                  padding='SAME',
                  use_bias=False,
                  activation=None,
-                 initializer=HyperImaginary4DInitializer(),
+                 initializer=Hypercomplex4DInitializer(),
                  data_format=None,
                  kernel_regularizer=1e-4):
         super(QuatConv2D, self).__init__()

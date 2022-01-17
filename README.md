@@ -21,22 +21,32 @@ If using this code, please cite
 
 @INPROCEEDINGS{senna2021tessarine,
 
-AUTHOR="Fernando Senna and Marcos Eduardo Valle",
+AUTHOR = "Fernando Senna and Marcos Eduardo Valle",
     
-TITLE="Tessarine and Quaternion-Valued Deep Neural Networks for Image Classification",
+TITLE = "Tessarine and Quaternion-Valued Deep Neural Networks for Image Classification",
     
-BOOKTITLE="ENIAC 2021 () ",
+BOOKTITLE = "Anais do XVIII Encontro Nacional de Inteligência Artificial e Computacional",
+
+LOCATION = "Online Event",
     
-ADDRESS="",
+DAYS = "29-3",
     
-DAYS="29-3",
+MONTH = "nov",
     
-MONTH="nov",
+YEAR = "2021",
+
+PAGES = "350--361",
+
+PUBLISHER = "SBC",
+ 
+ADDRESS = "Porto Alegre, RS, Brasil",
+
+DOI = "10.5753/eniac.2021.18266",
+
+URL = "https://sol.sbc.org.br/index.php/eniac/article/view/18266",
     
-YEAR="2021",
+ABSTRACT = "Many image processing and analysis tasks are performed with deep neural networks. Although the vast majority of advances have been made with real numbers, recent works have shown that complex and hypercomplex-valued networks may achieve better results. In this paper, we address quaternion-valued and introduce tessarine-valued deep neural networks, including tessarine-valued 2D convolutions. We also address initialization schemes and hypercomplex batch normalization. Finally, a tessarine-valued ResNet model with hypercomplex batch normalization outperformed the corresponding real and quaternion-valued networks on the CIFAR dataset.",
     
-ABSTRACT="Many image processing and analysis tasks are performed with deep neural networks. Although the vast majority of advances have been made with real numbers, recent works have shown that complex and hypercomplex-valued networks may achieve better results. In this paper, we address quaternion-valued and introduce tessarine-valued deep neural networks, including tessarine-valued 2D convolutions. We also address initialization schemes and hypercomplex batch normalization. Finally, a tessarine-valued ResNet model with hypercomplex batch normalization outperformed the corresponding real and quaternion-valued networks on the CIFAR dataset.",
-    
-KEYWORDS="Artificial Neural Networks; Computational Intelligence; Computer Vision; Deep Learning"
+KEYWORDS = "Artificial Neural Networks; Computational Intelligence; Computer Vision; Deep Learning"
 
 }
